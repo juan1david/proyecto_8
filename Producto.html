@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Producto {
+            #codigo;
+            #titulo;
+            #autor;
+            constructor() {
+                this.#codigo = '';
+                this.#titulo = '';
+                this.#autor = '';
+            }
+
+            set setcodigo(value) {
+                this.#codigo = value;
+            }
+
+            get getcodigo() {
+                return this.#codigo;
+            }
+
+            set settitulo(value) {
+                this.#titulo = value;
+            }
+
+            get gettitulo() {
+                return this.#titulo;
+            }
+
+            set setautor(value) {
+                this.#autor = value;
+            }
+
+            get getautor() {
+                return this.#autor;
+            }
+
+            informacionproducto(){
+                console.log(`el titulo del producto es:` + this.gettitulo + 
+                            `su codigo es:` + this.getcodigo + 
+                            `y su autor es:` + this.getautor);
+            }
+        }
+
+        class ProductoImpreso extends Producto {
+            #editorial;
+            #año;
+            #precio;
+            constructor() {
+                super();
+                this.#editorial = '';
+                this.#año = '';
+                this.#precio = 0;
+            }
+
+            set seteditorial(value) {
+                this.#editorial = value;
+            }
+
+            get geteditorial() {
+                return this.#editorial;
+            }
+
+            set setaño(value) {
+                this.#año = value;
+            }
+
+            get getaño() {
+                return this.#año;
+            }
+
+            set setprecio(value) {
+                this.#precio = value;
+            }
+
+            get getprecio() {
+                return this.#precio;
+            }
+
+            informacionproductoimpreso(){
+                console.log(`mi editoral es la:` + this.geteditorial + 
+                            `el año de lanzamiento fue:` + this.getaño +
+                            `y su precio es de:` + this.getprecio);
+            }
+        }
+
+        class Revista extends ProductoImpreso {
+            #volumen;
+            constructor() {
+                super();
+                this.#volumen = '';
+            }
+
+            set setvolumen (value) {
+                this.#volumen = value;
+            }
+
+            get getvolumen () {
+                return this.#volumen;
+            }
+
+            informacionrevista(){
+                console.log(`el volumen de la revista es de:` + this.getvolumen);
+            }
+
+            estadorevista(){
+                console.log(`el estado de la revista es: en buenas condiciones`);
+            }
+        }
+
+        class Libro extends ProductoImpreso {
+            #idioma;
+            constructor() {
+                super();
+                this.#idioma = '';
+            }
+
+            set setidioma (value) {
+                this.#idioma = value;
+            }
+
+            get getidioma () {
+                return this.#idioma;
+            }
+
+            informacionlibro(){
+                console.log(`el idioma del libro es:` + this.getidioma);
+            }
+
+            estadolibro(){
+                console.log(`el estado del libro es: en buen estado`);
+            }
+        }
+
+        class ProductoGrabado extends Producto {
+            #tiempoduracion;
+            #mediotecnologico;
+            constructor() {
+                super();
+                this.#tiempoduracion = 0;
+                this.#mediotecnologico = '';
+            }
+
+            set settiempoduracion (value) {
+                this.#tiempoduracion = value;
+            }
+
+            get gettiempoduracion () {
+                return this.#tiempoduracion;
+            }
+
+            set setmediotecnologico (value) {
+                this.#mediotecnologico = value;
+            }
+
+            get getmediotecnologico () {
+                return this.#mediotecnologico;
+            }
+
+            informacionproductograbado(){
+                console.log(`el tiempo de duracion es de:` + this.gettiempoduracion + `horas` +
+                            `y el medio tecnologico es la` + this.getmediotecnologico);
+            }
+        }
+
+        class ProductoSoftware extends Producto {
+            #version;
+            #sistemaoperativo;
+            constructor() {
+                super();
+                this.#version = '';
+                this.#sistemaoperativo = 0;
+            }
+
+            set setversion (value) {
+                this.#version = value;
+            }
+
+            get getversion () {
+                return this.#version;
+            }
+
+            set setsistemaoperativo (value) {
+                this.#sistemaoperativo = value;
+            }
+
+            get getsistemaoperativo () {
+                return this.#sistemaoperativo;
+            }
+
+            informacionproductosoftware(){
+                console.log(`la version del productosoftware es` + this.getversion +
+                            `y su sistema operativo es:` + this.getsistemaoperativo);
+            }
+        }
+
+        const producto = new Producto();
+        producto.settitulo = 'el principito';
+        producto.setcodigo = '10';
+        producto.setautor = 'Antoine';
+
+        producto.informacionproducto();
+
+        const productoimpreso = new ProductoImpreso();
+        productoimpreso.seteditorial = "numero 11";
+        productoimpreso.setaño = "1998";
+        productoimpreso.setprecio = 20000;
+        
+        productoimpreso.informacionproductoimpreso();
+
+        const revista = new Revista();
+        revista.setvolumen = "volumen 3";
+
+        revista.informacionrevista();
+        revista.estadorevista();
+
+        const libro = new Libro();
+        libro.setidioma = "español";
+
+        libro.informacionlibro();
+        libro.estadolibro();
+
+        const productograbado = new ProductoGrabado();
+        productograbado.settiempoduracion = 10;
+        productograbado.setmediotecnologico = 'radio';
+
+        productograbado.informacionproductograbado();
+
+        const productosoftware = new ProductoSoftware();
+        productosoftware.setversion = '11';
+        productosoftware.setsistemaoperativo = 10;
+
+        productosoftware.informacionproductosoftware();
+
+    </script>
+</body>
+</html>
