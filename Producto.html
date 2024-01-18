@@ -7,236 +7,304 @@
 </head>
 <body>
     <script>
-        class Producto {
-            #codigo;
-            #titulo;
-            #autor;
-            constructor() {
-                this.#codigo = '';
-                this.#titulo = '';
-                this.#autor = '';
-            }
+        // Definición de la clase Producto.
+class Producto {
+    // Atributos privados para el código, título y autor del producto.
+    #codigo;
+    #titulo;
+    #autor;
 
-            set setcodigo(value) {
-                this.#codigo = value;
-            }
+    // Constructor de la clase Producto que inicializa los atributos.
+    constructor() {
+        this.#codigo = '';
+        this.#titulo = '';
+        this.#autor = '';
+    }
 
-            get getcodigo() {
-                return this.#codigo;
-            }
+    // Setter para asignar un valor al atributo privado #codigo.
+    set setcodigo(value) {
+        this.#codigo = value;
+    }
 
-            set settitulo(value) {
-                this.#titulo = value;
-            }
+    // Getter para obtener el valor del atributo privado #codigo.
+    get getcodigo() {
+        return this.#codigo;
+    }
 
-            get gettitulo() {
-                return this.#titulo;
-            }
+    // Setter para asignar un valor al atributo privado #titulo.
+    set settitulo(value) {
+        this.#titulo = value;
+    }
 
-            set setautor(value) {
-                this.#autor = value;
-            }
+    // Getter para obtener el valor del atributo privado #titulo.
+    get gettitulo() {
+        return this.#titulo;
+    }
 
-            get getautor() {
-                return this.#autor;
-            }
+    // Setter para asignar un valor al atributo privado #autor.
+    set setautor(value) {
+        this.#autor = value;
+    }
 
-            informacionproducto(){
-                console.log(`el titulo del producto es:` + this.gettitulo + 
-                            `su codigo es:` + this.getcodigo + 
-                            `y su autor es:` + this.getautor);
-            }
-        }
+    // Getter para obtener el valor del atributo privado #autor.
+    get getautor() {
+        return this.#autor;
+    }
 
-        class ProductoImpreso extends Producto {
-            #editorial;
-            #año;
-            #precio;
-            constructor() {
-                super();
-                this.#editorial = '';
-                this.#año = '';
-                this.#precio = 0;
-            }
+    // Método para imprimir información del producto.
+    informacionproducto() {
+        console.log(`El título del producto es:` + this.gettitulo +
+                    `, su código es:` + this.getcodigo +
+                    ` y su autor es:` + this.getautor);
+    }
+}
 
-            set seteditorial(value) {
-                this.#editorial = value;
-            }
+        // Definición de la clase ProductoImpreso que extiende la clase Producto.
+class ProductoImpreso extends Producto {
+    // Atributos privados adicionales para la editorial, año y precio del producto impreso.
+    #editorial;
+    #año;
+    #precio;
 
-            get geteditorial() {
-                return this.#editorial;
-            }
+    // Constructor de la clase ProductoImpreso que inicializa los atributos y llama al constructor de la clase Producto.
+    constructor() {
+        super();
+        this.#editorial = '';
+        this.#año = '';
+        this.#precio = 0;
+    }
 
-            set setaño(value) {
-                this.#año = value;
-            }
+    // Setter para asignar un valor al atributo privado #editorial.
+    set seteditorial(value) {
+        this.#editorial = value;
+    }
 
-            get getaño() {
-                return this.#año;
-            }
+    // Getter para obtener el valor del atributo privado #editorial.
+    get geteditorial() {
+        return this.#editorial;
+    }
 
-            set setprecio(value) {
-                this.#precio = value;
-            }
+    // Setter para asignar un valor al atributo privado #año.
+    set setaño(value) {
+        this.#año = value;
+    }
 
-            get getprecio() {
-                return this.#precio;
-            }
+    // Getter para obtener el valor del atributo privado #año.
+    get getaño() {
+        return this.#año;
+    }
 
-            informacionproductoimpreso(){
-                console.log(`mi editoral es la:` + this.geteditorial + 
-                            `el año de lanzamiento fue:` + this.getaño +
-                            `y su precio es de:` + this.getprecio);
-            }
-        }
+    // Setter para asignar un valor al atributo privado #precio.
+    set setprecio(value) {
+        this.#precio = value;
+    }
 
-        class Revista extends ProductoImpreso {
-            #volumen;
-            constructor() {
-                super();
-                this.#volumen = '';
-            }
+    // Getter para obtener el valor del atributo privado #precio.
+    get getprecio() {
+        return this.#precio;
+    }
 
-            set setvolumen (value) {
-                this.#volumen = value;
-            }
+    // Método específico para la clase ProductoImpreso para imprimir información del producto impreso.
+    informacionproductoimpreso() {
+        console.log(`La editorial es:` + this.geteditorial +
+                    `, el año de lanzamiento fue:` + this.getaño +
+                    ` y su precio es de:` + this.getprecio);
+    }
+}
 
-            get getvolumen () {
-                return this.#volumen;
-            }
+        // Definición de la clase Revista que extiende la clase ProductoImpreso.
+class Revista extends ProductoImpreso {
+    // Atributo privado adicional para el volumen de la revista.
+    #volumen;
 
-            informacionrevista(){
-                console.log(`el volumen de la revista es de:` + this.getvolumen);
-            }
+    // Constructor de la clase Revista que inicializa los atributos y llama al constructor de la clase ProductoImpreso.
+    constructor() {
+        super();
+        this.#volumen = '';
+    }
 
-            estadorevista(){
-                console.log(`el estado de la revista es: en buenas condiciones`);
-            }
-        }
+    // Setter para asignar un valor al atributo privado #volumen.
+    set setvolumen(value) {
+        this.#volumen = value;
+    }
 
-        class Libro extends ProductoImpreso {
-            #idioma;
-            constructor() {
-                super();
-                this.#idioma = '';
-            }
+    // Getter para obtener el valor del atributo privado #volumen.
+    get getvolumen() {
+        return this.#volumen;
+    }
 
-            set setidioma (value) {
-                this.#idioma = value;
-            }
+    // Método específico para la clase Revista para imprimir información de la revista.
+    informacionrevista() {
+        console.log(`El volumen de la revista es de:` + this.getvolumen);
+    }
 
-            get getidioma () {
-                return this.#idioma;
-            }
+    // Método específico para la clase Revista para imprimir el estado de la revista.
+    estadorevista() {
+        console.log(`El estado de la revista es: en buenas condiciones`);
+    }
+}
 
-            informacionlibro(){
-                console.log(`el idioma del libro es:` + this.getidioma);
-            }
+// Definición de la clase Libro que extiende la clase ProductoImpreso.
+class Libro extends ProductoImpreso {
+    // Atributo privado adicional para el idioma del libro.
+    #idioma;
 
-            estadolibro(){
-                console.log(`el estado del libro es: en buen estado`);
-            }
-        }
+    // Constructor de la clase Libro que inicializa los atributos y llama al constructor de la clase ProductoImpreso.
+    constructor() {
+        super();
+        this.#idioma = '';
+    }
 
-        class ProductoGrabado extends Producto {
-            #tiempoduracion;
-            #mediotecnologico;
-            constructor() {
-                super();
-                this.#tiempoduracion = 0;
-                this.#mediotecnologico = '';
-            }
+    // Setter para asignar un valor al atributo privado #idioma.
+    set setidioma(value) {
+        this.#idioma = value;
+    }
 
-            set settiempoduracion (value) {
-                this.#tiempoduracion = value;
-            }
+    // Getter para obtener el valor del atributo privado #idioma.
+    get getidioma() {
+        return this.#idioma;
+    }
 
-            get gettiempoduracion () {
-                return this.#tiempoduracion;
-            }
+    // Método específico para la clase Libro para imprimir información del libro.
+    informacionlibro() {
+        console.log(`El idioma del libro es:` + this.getidioma);
+    }
 
-            set setmediotecnologico (value) {
-                this.#mediotecnologico = value;
-            }
+    // Método específico para la clase Libro para imprimir el estado del libro.
+    estadolibro() {
+        console.log(`El estado del libro es: en buen estado`);
+    }
+}
 
-            get getmediotecnologico () {
-                return this.#mediotecnologico;
-            }
+// Definición de la clase ProductoGrabado que extiende la clase Producto.
+class ProductoGrabado extends Producto {
+    // Atributos privados adicionales para el tiempo de duración y el medio tecnológico del producto grabado.
+    #tiempoduracion;
+    #mediotecnologico;
 
-            informacionproductograbado(){
-                console.log(`el tiempo de duracion es de:` + this.gettiempoduracion + `horas` +
-                            `y el medio tecnologico es la` + this.getmediotecnologico);
-            }
-        }
+    // Constructor de la clase ProductoGrabado que inicializa los atributos y llama al constructor de la clase Producto.
+    constructor() {
+        super();
+        this.#tiempoduracion = 0;
+        this.#mediotecnologico = '';
+    }
 
-        class ProductoSoftware extends Producto {
-            #version;
-            #sistemaoperativo;
-            constructor() {
-                super();
-                this.#version = '';
-                this.#sistemaoperativo = 0;
-            }
+    // Setter para asignar un valor al atributo privado #tiempoduracion.
+    set settiempoduracion(value) {
+        this.#tiempoduracion = value;
+    }
 
-            set setversion (value) {
-                this.#version = value;
-            }
+    // Getter para obtener el valor del atributo privado #tiempoduracion.
+    get gettiempoduracion() {
+        return this.#tiempoduracion;
+    }
 
-            get getversion () {
-                return this.#version;
-            }
+    // Setter para asignar un valor al atributo privado #mediotecnologico.
+    set setmediotecnologico(value) {
+        this.#mediotecnologico = value;
+    }
 
-            set setsistemaoperativo (value) {
-                this.#sistemaoperativo = value;
-            }
+    // Getter para obtener el valor del atributo privado #mediotecnologico.
+    get getmediotecnologico() {
+        return this.#mediotecnologico;
+    }
 
-            get getsistemaoperativo () {
-                return this.#sistemaoperativo;
-            }
+    // Método específico para la clase ProductoGrabado para imprimir información del producto grabado.
+    informacionproductograbado() {
+        console.log(`El tiempo de duración es de:` + this.gettiempoduracion + ` horas` +
+                    ` y el medio tecnológico es la` + this.getmediotecnologico);
+    }
+}
 
-            informacionproductosoftware(){
-                console.log(`la version del productosoftware es` + this.getversion +
-                            `y su sistema operativo es:` + this.getsistemaoperativo);
-            }
-        }
+        // Definición de la clase ProductoSoftware que extiende la clase Producto.
+class ProductoSoftware extends Producto {
+    // Atributos privados adicionales para la versión y el sistema operativo del producto software.
+    #version;
+    #sistemaoperativo;
 
-        const producto = new Producto();
-        producto.settitulo = 'el principito';
-        producto.setcodigo = '10';
-        producto.setautor = 'Antoine';
+    // Constructor de la clase ProductoSoftware que inicializa los atributos y llama al constructor de la clase Producto.
+    constructor() {
+        super();
+        this.#version = '';
+        this.#sistemaoperativo = 0;
+    }
 
-        producto.informacionproducto();
+    // Setter para asignar un valor al atributo privado #version.
+    set setversion(value) {
+        this.#version = value;
+    }
 
-        const productoimpreso = new ProductoImpreso();
-        productoimpreso.seteditorial = "numero 11";
-        productoimpreso.setaño = "1998";
-        productoimpreso.setprecio = 20000;
-        
-        productoimpreso.informacionproductoimpreso();
+    // Getter para obtener el valor del atributo privado #version.
+    get getversion() {
+        return this.#version;
+    }
 
-        const revista = new Revista();
-        revista.setvolumen = "volumen 3";
+    // Setter para asignar un valor al atributo privado #sistemaoperativo.
+    set setsistemaoperativo(value) {
+        this.#sistemaoperativo = value;
+    }
 
-        revista.informacionrevista();
-        revista.estadorevista();
+    // Getter para obtener el valor del atributo privado #sistemaoperativo.
+    get getsistemaoperativo() {
+        return this.#sistemaoperativo;
+    }
 
-        const libro = new Libro();
-        libro.setidioma = "español";
+    // Método específico para la clase ProductoSoftware para imprimir información del producto software.
+    informacionproductosoftware() {
+        console.log(`La versión del producto software es` + this.getversion +
+            ` y su sistema operativo es:` + this.getsistemaoperativo);
+    }
+}
 
-        libro.informacionlibro();
-        libro.estadolibro();
+// Creación de una instancia de la clase Producto.
+const producto = new Producto();
+producto.settitulo = 'El Principito';
+producto.setcodigo = '10';
+producto.setautor = 'Antoine';
 
-        const productograbado = new ProductoGrabado();
-        productograbado.settiempoduracion = 10;
-        productograbado.setmediotecnologico = 'radio';
+// Llamada al método de la clase Producto para imprimir información del producto.
+producto.informacionproducto();
 
-        productograbado.informacionproductograbado();
+// Creación de una instancia de la clase ProductoImpreso.
+const productoimpreso = new ProductoImpreso();
+productoimpreso.seteditorial = "Número 11";
+productoimpreso.setaño = "1998";
+productoimpreso.setprecio = 20000;
 
-        const productosoftware = new ProductoSoftware();
-        productosoftware.setversion = '11';
-        productosoftware.setsistemaoperativo = 10;
+// Llamada al método de la clase ProductoImpreso para imprimir información del producto impreso.
+productoimpreso.informacionproductoimpreso();
 
-        productosoftware.informacionproductosoftware();
+// Creación de una instancia de la clase Revista.
+const revista = new Revista();
+revista.setvolumen = "Volumen 3";
+
+// Llamada a los métodos de la clase Revista para imprimir información y estado de la revista.
+revista.informacionrevista();
+revista.estadorevista();
+
+// Creación de una instancia de la clase Libro.
+const libro = new Libro();
+libro.setidioma = "Español";
+
+// Llamada a los métodos de la clase Libro para imprimir información y estado del libro.
+libro.informacionlibro();
+libro.estadolibro();
+
+// Creación de una instancia de la clase ProductoGrabado.
+const productograbado = new ProductoGrabado();
+productograbado.settiempoduracion = 10;
+productograbado.setmediotecnologico = 'Radio';
+
+// Llamada al método de la clase ProductoGrabado para imprimir información del producto grabado.
+productograbado.informacionproductograbado();
+
+// Creación de una instancia de la clase ProductoSoftware.
+const productosoftware = new ProductoSoftware();
+productosoftware.setversion = '11';
+productosoftware.setsistemaoperativo = 10;
+
+// Llamada al método de la clase ProductoSoftware para imprimir información del producto software.
+productosoftware.informacionproductosoftware();
 
     </script>
 </body>

@@ -7,314 +7,397 @@
 </head>
 <body>
     <script>
-         class Persona {
-            #documento;
-            #nombrecompleto;
-            constructor() {
-                this.#documento = '';
-                this.#nombrecompleto = '';
-            }
+// Definición de la clase Persona.
+class Persona {
+    // Atributos privados usando la notación de campo privado (#).
+    #documento;
+    #nombrecompleto;
 
-            set setdocumento(value) {
-                this.#documento = value;
-            }
+    // Constructor que inicializa los atributos de la clase Persona.
+    constructor() {
+        this.#documento = '';
+        this.#nombrecompleto = '';
+    }
 
-            get getdocumento() {
-                return this.#documento;
-            }
+    // Setter para asignar un valor al atributo privado #documento.
+    set setdocumento(value) {
+        this.#documento = value;
+    }
 
-            set setnombrecompleto(value) {
-                this.#nombrecompleto = value;
-            }
+    // Getter para obtener el valor del atributo privado #documento.
+    get getdocumento() {
+        return this.#documento;
+    }
 
-            get getnombrecompleto() {
-                return this.#nombrecompleto;
-            }
+    // Setter para asignar un valor al atributo privado #nombrecompleto.
+    set setnombrecompleto(value) {
+        this.#nombrecompleto = value;
+    }
 
-    informacion(){
-    console.log(`mi nombre es:` + this.getnombrecompleto + `y mi documento es:` + this.getdocumento);
-     }
-}
+    // Getter para obtener el valor del atributo privado #nombrecompleto.
+    get getnombrecompleto() {
+        return this.#nombrecompleto;
+    }
 
-        class Aprendiz extends Persona {
-            #ficha;
-            #programa;
-            constructor() {
-                super();
-                this.#ficha = '';
-                this.#programa = '';
-            }
-
-            set setficha(value) {
-                this.#ficha = value;
-            }
-
-            get getficha() {
-                return this.#ficha;
-            }
-
-            set setprograma(value) {
-                this.#programa = value;
-            }
-
-            get getprograma() {
-                return this.#programa;
-            }
-
-        matriculaAprendiz(){
-        console.log(`Estoy inscrito en la ficha:` + this.getficha + `del programa:` + this.getprograma);
+    // Método para imprimir información de la persona.
+    informacion() {
+        console.log(`Mi nombre es:` + this.getnombrecompleto + ` y mi documento es:` + this.getdocumento);
     }
 }
 
-        class Etapalectiva extends Aprendiz {
-            #numerotrimestre;
-            #fechainicio;
-            #fechaterminacion;
-            constructor() {
-                super();
-                this.#numerotrimestre = '';
-                this.#fechainicio = '';
-                this.#fechaterminacion = '';
-            }
+// Definición de la clase Aprendiz que hereda de Persona.
+class Aprendiz extends Persona {
+    // Atributos privados adicionales para la clase Aprendiz.
+    #ficha;
+    #programa;
 
-            set setnumerotrimestre(value) {
-                this.#numerotrimestre = value;
-            }
-
-            get getnumerotrimestre() {
-                return this.#numerotrimestre;
-            }
-
-            set setfechainicio(value) {
-                this.#fechainicio = value;
-            }
-
-            get getfechainicio() {
-                return this.#fechainicio;
-            }
-
-            set setfechaterminacion(value) {
-                this.#fechaterminacion = value;
-            }
-
-            get getfechaterminacion() {
-                return this.#fechaterminacion;
-            }
-
-    informacionEtapalectiva(){
-    console.log(`La etapa lectiva inicio en:` + this.getfechainicio + `vamos en el:` + this.getnumerotrimestre + `trimestre` +
-                ` y termina en:` + this.getfechaterminacion);
+    // Constructor que inicializa los atributos de la clase Aprendiz y llama al constructor de Persona.
+    constructor() {
+        super();
+        this.#ficha = '';
+        this.#programa = '';
     }
 
-    estado(){
-    console.log(`el estado de mi formacion es:` + this.getnumerotrimestre + `trimestre.`);
+    // Setter para asignar un valor al atributo privado #ficha.
+    set setficha(value) {
+        this.#ficha = value;
+    }
+
+    // Getter para obtener el valor del atributo privado #ficha.
+    get getficha() {
+        return this.#ficha;
+    }
+
+    // Setter para asignar un valor al atributo privado #programa.
+    set setprograma(value) {
+        this.#programa = value;
+    }
+
+    // Getter para obtener el valor del atributo privado #programa.
+    get getprograma() {
+        return this.#programa;
+    }
+
+    // Método específico para la clase Aprendiz para imprimir información de matrícula.
+    matriculaAprendiz() {
+        console.log(`Estoy inscrito en la ficha:` + this.getficha + ` del programa:` + this.getprograma);
     }
 }
 
-        class EtapaPractica extends Aprendiz {
-            #modalidad;
-            #fechainicio;
-            #fechaterminacion;
-            constructor() {
-                super();
-                this.#modalidad = '';
-                this.#fechainicio = '';
-                this.#fechaterminacion = '';
-            }
+    // Definición de la clase Etapalectiva que hereda de la clase Aprendiz.
+    class Etapalectiva extends Aprendiz {
+    // Atributos privados adicionales para la clase Etapalectiva.
+    #numerotrimestre;
+    #fechainicio;
+    #fechaterminacion;
 
-            set setmodalidad(value) {
-                this.#modalidad = value;
-            }
+    // Constructor que inicializa los atributos de la clase Etapalectiva y llama al constructor de Aprendiz.
+    constructor() {
+        super();
+        this.#numerotrimestre = '';
+        this.#fechainicio = '';
+        this.#fechaterminacion = '';
+    }
 
-            get getmodalidad() {
-                return this.#modalidad;
-            }
+    // Setter para asignar un valor al atributo privado #numerotrimestre.
+    set setnumerotrimestre(value) {
+        this.#numerotrimestre = value;
+    }
 
-            set setfechainicio(value) {
-                this.#fechainicio = value;
-            }
+    // Getter para obtener el valor del atributo privado #numerotrimestre.
+    get getnumerotrimestre() {
+        return this.#numerotrimestre;
+    }
 
-            get getfechainicio() {
-                return this.#fechainicio;
-            }
+    // Setter para asignar un valor al atributo privado #fechainicio.
+    set setfechainicio(value) {
+        this.#fechainicio = value;
+    }
 
-            set setfechaterminacion(value) {
-                this.#fechaterminacion = value;
-            }
+    // Getter para obtener el valor del atributo privado #fechainicio.
+    get getfechainicio() {
+        return this.#fechainicio;
+    }
 
-            get getfechaterminacion() {
-                return this.#fechaterminacion;
-            }
+    // Setter para asignar un valor al atributo privado #fechaterminacion.
+    set setfechaterminacion(value) {
+        this.#fechaterminacion = value;
+    }
 
-        informacionEtapaPractica(){
-        console.log(`La etapa practica inicia en:` + this.getfechainicio + `termina en:` + this.getfechaterminacion +
-                    `y su modalidad es:` + this.getmodalidad);
-        }
+    // Getter para obtener el valor del atributo privado #fechaterminacion.
+    get getfechaterminacion() {
+        return this.#fechaterminacion;
+    }
 
-        estado(){
+    // Método específico para la clase Etapalectiva para imprimir información de la etapa lectiva.
+    informacionEtapalectiva() {
+        console.log(`La etapa lectiva inicio en:` + this.getfechainicio + ` vamos en el:` + this.getnumerotrimestre + ` trimestre` +
+                    ` y termina en:` + this.getfechaterminacion);
+    }
+
+    // Método específico para la clase Etapalectiva para imprimir información del estado de formación.
+    estado() {
+        console.log(`El estado de mi formación es:` + this.getnumerotrimestre + ` trimestre.`);
+    }
+}
+
+// Definición de la clase EtapaPractica que hereda de la clase Aprendiz.
+class EtapaPractica extends Aprendiz {
+    // Atributos privados adicionales para la clase EtapaPractica.
+    #modalidad;
+    #fechainicio;
+    #fechaterminacion;
+
+    // Constructor que inicializa los atributos de la clase EtapaPractica y llama al constructor de Aprendiz.
+    constructor() {
+        super();
+        this.#modalidad = '';
+        this.#fechainicio = '';
+        this.#fechaterminacion = '';
+    }
+
+    // Setter para asignar un valor al atributo privado #modalidad.
+    set setmodalidad(value) {
+        this.#modalidad = value;
+    }
+
+    // Getter para obtener el valor del atributo privado #modalidad.
+    get getmodalidad() {
+        return this.#modalidad;
+    }
+
+    // Setter para asignar un valor al atributo privado #fechainicio.
+    set setfechainicio(value) {
+        this.#fechainicio = value;
+    }
+
+    // Getter para obtener el valor del atributo privado #fechainicio.
+    get getfechainicio() {
+        return this.#fechainicio;
+    }
+
+    // Setter para asignar un valor al atributo privado #fechaterminacion.
+    set setfechaterminacion(value) {
+        this.#fechaterminacion = value;
+    }
+
+    // Getter para obtener el valor del atributo privado #fechaterminacion.
+    get getfechaterminacion() {
+        return this.#fechaterminacion;
+    }
+
+    // Método específico para la clase EtapaPractica para imprimir información de la etapa práctica.
+    informacionEtapaPractica() {
+        console.log(`La etapa práctica inicia en:` + this.getfechainicio + ` termina en:` + this.getfechaterminacion +
+                    ` y su modalidad es:` + this.getmodalidad);
+    }
+
+    // Método específico para la clase EtapaPractica para imprimir información del estado.
+    estado() {
         console.log(`El estado de modalidad es:` + this.getmodalidad);
-        }
-        }
-
-        class Instructor extends Persona {
-            #profesion;
-            #salariobasico;
-            constructor() {
-                super();
-                this.#profesion = '';
-                this.#salariobasico = 0;
-            }
-
-            set setprofesion(value) {
-                this.#profesion = value;
-            }
-
-            get getprofesion() {
-                return this.#profesion;
-            }
-
-            set setsalariobasico(value) {
-                this.#salariobasico = value;
-            }
-
-            get getsalariobasico() {
-                return this.#salariobasico;
-            }
-
-        contratoInstructor(){
-        console.log(`mi contrato va segun mi profesion la cual es:` + this.getprofesion +
-                   `y mi salario basico es de:` + this.getsalariobasico);
     }
-        }
+}
 
-        class InstructorPlanta extends Instructor {
-            #grado;
-            #fechavinculacion;
-            constructor() {
-                super();
-                this.#grado = 0;
-                this.#fechavinculacion = '';
-            }
+// Definición de la clase Instructor que hereda de la clase Persona.
+class Instructor extends Persona {
+    // Atributos privados adicionales para la clase Instructor.
+    #profesion;
+    #salariobasico;
 
-            set setgrado(value) {
-                this.#grado = value;
-            }
+    // Constructor que inicializa los atributos de la clase Instructor y llama al constructor de Persona.
+    constructor() {
+        super();
+        this.#profesion = '';
+        this.#salariobasico = 0;
+    }
 
-            get getgrado() {
-                return this.#grado;
-            }
+    // Setter para asignar un valor al atributo privado #profesion.
+    set setprofesion(value) {
+        this.#profesion = value;
+    }
 
-            set setfechavinculacion(value) {
-                this.#fechavinculacion = value;
-            }
+    // Getter para obtener el valor del atributo privado #profesion.
+    get getprofesion() {
+        return this.#profesion;
+    }
 
-            get getfechavinculacion() {
-                return this.#fechavinculacion;
-            }
+    // Setter para asignar un valor al atributo privado #salariobasico.
+    set setsalariobasico(value) {
+        this.#salariobasico = value;
+    }
 
-            informacionInstructorPlanta(){
-            console.log(`mi fecha de vinculacion fue en:` + this.getfechavinculacion +
-            `y voy en el grado:` + this.getgrado);
-        }
+    // Getter para obtener el valor del atributo privado #salariobasico.
+    get getsalariobasico() {
+        return this.#salariobasico;
+    }
 
-        estadoInstructorPlanta(){
-        console.log(`mi estado como instructor de planta es en grado:` + this.getgrado);
-        }
+    // Método específico para la clase Instructor para imprimir información del contrato.
+    contratoInstructor() {
+        console.log(`Mi contrato va según mi profesión la cual es:` + this.getprofesion +
+                    ` y mi salario básico es de:` + this.getsalariobasico);
+    }
+}
+// Definición de la clase InstructorPlanta que hereda de la clase Instructor.
+class InstructorPlanta extends Instructor {
+    // Atributos privados adicionales para la clase InstructorPlanta.
+    #grado;
+    #fechavinculacion;
 
-        sueldoInstructorPlanta(){
-        console.log(`mi sueldo es de:` + this.getsalariobasico);
-        }
+    // Constructor que inicializa los atributos de la clase InstructorPlanta y llama al constructor de Instructor.
+    constructor() {
+        super();
+        this.#grado = 0;
+        this.#fechavinculacion = '';
+    }
 
-        }
+    // Setter para asignar un valor al atributo privado #grado.
+    set setgrado(value) {
+        this.#grado = value;
+    }
 
-        class InstructorContrato extends Instructor {
-            #duracioncontrato;
-            #fechadevinculacion;
-            constructor() {
-                super();
-                this.#duracioncontrato = '';
-                this.#fechadevinculacion = '';
-            }
+    // Getter para obtener el valor del atributo privado #grado.
+    get getgrado() {
+        return this.#grado;
+    }
 
-            set setduracioncontrato(value) {
-                this.#duracioncontrato = value;
-            }
+    // Setter para asignar un valor al atributo privado #fechavinculacion.
+    set setfechavinculacion(value) {
+        this.#fechavinculacion = value;
+    }
 
-            get getduracioncontrato() {
-                return this.#duracioncontrato;
-            }
+    // Getter para obtener el valor del atributo privado #fechavinculacion.
+    get getfechavinculacion() {
+        return this.#fechavinculacion;
+    }
 
-            set setfechadevinculacion(value) {
-                this.#fechadevinculacion = value;
-            }
+    // Método específico para la clase InstructorPlanta para imprimir información personal.
+    informacionInstructorPlanta() {
+        console.log(`Mi fecha de vinculación fue en:` + this.getfechavinculacion +
+                    ` y voy en el grado:` + this.getgrado);
+    }
 
-            get getfechadevinculacion() {
-                return this.#fechadevinculacion;
-            }
+    // Método específico para la clase InstructorPlanta para imprimir información del estado.
+    estadoInstructorPlanta() {
+        console.log(`Mi estado como instructor de planta es en grado:` + this.getgrado);
+    }
 
-        informacionInstructorContrato(){
-        console.log(`mi fecha de vinculacion fue en:` + this.getfechadevinculacion +
-                    `y la duracion de mi contrato es:` + this.getduracioncontrato);
-        }
+    // Método específico para la clase InstructorPlanta para imprimir información del sueldo.
+    sueldoInstructorPlanta() {
+        console.log(`Mi sueldo es de:` + this.getsalariobasico);
+    }
+}
 
-        estadoInstructorContrato(){
-        console.log(`mi estado como instructor de planta es de:` + this.getduracioncontrato);
-        }
+// Definición de la clase InstructorContrato que hereda de la clase Instructor.
+class InstructorContrato extends Instructor {
+    // Atributos privados adicionales para la clase InstructorContrato.
+    #duracioncontrato;
+    #fechadevinculacion;
 
-        sueldoInstructorContrato(){
-        console.log(`mi sueldo es de:` + this.getsalariobasico);
-        }
-        }
+    // Constructor que inicializa los atributos de la clase InstructorContrato y llama al constructor de Instructor.
+    constructor() {
+        super();
+        this.#duracioncontrato = '';
+        this.#fechadevinculacion = '';
+    }
 
-         const persona = new Persona();
-        persona.setnombrecompleto = 'Andres Hernandez';
-        persona.setdocumento = "1045678912";
+    // Setter para asignar un valor al atributo privado #duracioncontrato.
+    set setduracioncontrato(value) {
+        this.#duracioncontrato = value;
+    }
 
-        persona.informacion();
+    // Getter para obtener el valor del atributo privado #duracioncontrato.
+    get getduracioncontrato() {
+        return this.#duracioncontrato;
+    }
 
-        const aprendiz = new Aprendiz();
-        aprendiz.setficha = "2798618";
-        aprendiz.setprograma = "desarrollo software";
+    // Setter para asignar un valor al atributo privado #fechadevinculacion.
+    set setfechadevinculacion(value) {
+        this.#fechadevinculacion = value;
+    }
 
-        aprendiz.matriculaAprendiz();
+    // Getter para obtener el valor del atributo privado #fechadevinculacion.
+    get getfechadevinculacion() {
+        return this.#fechadevinculacion;
+    }
+}
 
-        const etapaLectiva = new Etapalectiva();
-        etapaLectiva.setfechainicio = "2023-01-01";
-        etapaLectiva.setfechaterminacion = "2023-12-31";
-        etapaLectiva.setnumerotrimestre = "3";
+// Creación de una instancia de la clase Persona.
+const persona = new Persona();
 
-        etapaLectiva.informacionEtapalectiva();
-        etapaLectiva.estado();
+// Asignación de valores a los atributos de la instancia de Persona.
+persona.setnombrecompleto = 'Andres Hernandez';
+persona.setdocumento = "1045678912";
 
-        const etapaPractica = new EtapaPractica();
-        etapaPractica.setmodalidad = "presencial";
-        etapaPractica.setfechainicio = "2023-01-01";
-        etapaPractica.setfechaterminacion = "2023-06-30";
+// Llamada al método informacion de la clase Persona.
+persona.informacion();
 
-        etapaPractica.informacionEtapaPractica();
-        etapaPractica.estado();
+// Creación de una instancia de la clase Aprendiz.
+const aprendiz = new Aprendiz();
 
-        const instructor = new Instructor();
-        instructor.setprofesion = "Instructor Contratista";
-        instructor.setsalariobasico = 1200000;
+// Asignación de valores a los atributos de la instancia de Aprendiz.
+aprendiz.setficha = "2798618";
+aprendiz.setprograma = "desarrollo software";
 
-        instructor.contratoInstructor();
+// Llamada al método matriculaAprendiz de la clase Aprendiz.
+aprendiz.matriculaAprendiz();
 
-        const instructorPlanta = new InstructorPlanta();
-        instructorPlanta.setgrado = "Grado 2";
-        instructorPlanta.setfechavinculacion = "2020-01-01";
+// Creación de una instancia de la clase Etapalectiva.
+const etapaLectiva = new Etapalectiva();
 
-        instructorPlanta.informacionInstructorPlanta();
-        instructorPlanta.estadoInstructorPlanta();
-        instructorPlanta.sueldoInstructorPlanta();
+// Asignación de valores a los atributos de la instancia de Etapalectiva.
+etapaLectiva.setfechainicio = "2023-01-01";
+etapaLectiva.setfechaterminacion = "2023-12-31";
+etapaLectiva.setnumerotrimestre = "3";
 
-        const instructorContrato = new InstructorContrato();
-        instructorContrato.setduracioncontrato = "2 años";
-        instructorContrato.setfechadevinculacion = "2023-01-01";
+// Llamada a los métodos informacionEtapalectiva y estado de la clase Etapalectiva.
+etapaLectiva.informacionEtapalectiva();
+etapaLectiva.estado();
 
-        instructorContrato.informacionInstructorContrato();
-        instructorContrato.estadoInstructorContrato();
-        instructorContrato.sueldoInstructorContrato();
+// Creación de una instancia de la clase EtapaPractica.
+const etapaPractica = new EtapaPractica();
+
+// Asignación de valores a los atributos de la instancia de EtapaPractica.
+etapaPractica.setmodalidad = "presencial";
+etapaPractica.setfechainicio = "2023-01-01";
+etapaPractica.setfechaterminacion = "2023-06-30";
+
+// Llamada a los métodos informacionEtapaPractica y estado de la clase EtapaPractica.
+etapaPractica.informacionEtapaPractica();
+etapaPractica.estado();
+
+// Creación de una instancia de la clase Instructor.
+const instructor = new Instructor();
+
+// Asignación de valores a los atributos de la instancia de Instructor.
+instructor.setprofesion = "Instructor Contratista";
+instructor.setsalariobasico = 1200000;
+
+// Llamada al método contratoInstructor de la clase Instructor.
+instructor.contratoInstructor();
+
+// Creación de una instancia de la clase InstructorPlanta.
+const instructorPlanta = new InstructorPlanta();
+
+// Asignación de valores a los atributos de la instancia de InstructorPlanta.
+instructorPlanta.setgrado = "Grado 2";
+instructorPlanta.setfechavinculacion = "2020-01-01";
+
+// Llamada a los métodos informacionInstructorPlanta, estadoInstructorPlanta y sueldoInstructorPlanta de la clase InstructorPlanta.
+instructorPlanta.informacionInstructorPlanta();
+instructorPlanta.estadoInstructorPlanta();
+instructorPlanta.sueldoInstructorPlanta();
+
+// Creación de una instancia de la clase InstructorContrato.
+const instructorContrato = new InstructorContrato();
+
+// Asignación de valores a los atributos de la instancia de InstructorContrato.
+instructorContrato.setduracioncontrato = "2 años";
+instructorContrato.setfechadevinculacion = "2023-01-01";
+
+// Llamada a los métodos informacionInstructorContrato, estadoInstructorContrato y sueldoInstructorContrato de la clase InstructorContrato.
+instructorContrato.informacionInstructorContrato();
+instructorContrato.estadoInstructorContrato();
+instructorContrato.sueldoInstructorContrato();
 
     </script>
     
